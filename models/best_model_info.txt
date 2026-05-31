@@ -1,0 +1,5 @@
+Best model: Logistic Regression
+Best CV ROC-AUC: 0.8196
+Tuned test ROC-AUC: 0.8331
+Best parameters: {'C': 10, 'penalty': 'l2'}
+Uses scaled features: True

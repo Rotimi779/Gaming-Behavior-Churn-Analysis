@@ -1,0 +1,35 @@
+================================================================================
+PHASE 1: EDA SUMMARY - WoW Player Churn
+Observation/Outcome Window Split
+================================================================================
+
+Observation window: 2008-01-01 to 2008-09-30 (features come from here)
+Outcome window:     2008-10-01 to 2008-12-31 (churn label comes from here)
+
+Churn definition: active in observation window but ZERO
+snapshots in the outcome window.
+
+Valid characters (pre Phase-2 filters): 1,560
+Churn rate: 42.24%
+Churned: 659  |  Retained: 901
+
+Mean metrics: churned vs retained (observation window)
+  activity_days      retained=    195.2  churned=     72.4
+  unique_zones       retained=     28.6  churned=      8.1
+  max_level          retained=     57.2  churned=     38.3
+  observations       retained=   1105.1  churned=    206.7
+  level_gain         retained=      2.7  churned=      1.7
+
+Feature correlation with churn:
+  activity_days        -0.5627
+  unique_zones         -0.4446
+  max_level            -0.3652
+  has_guild            -0.3438
+  guild_count          -0.3288
+  observations         -0.2961
+  level_gain           -0.0682
+  days_since_start     +0.2330
+
+NOTE for README: the observation/outcome window split is a
+deliberate choice to prevent target leakage. An earlier
+full-year definition leaked last_seen into activity_days.

@@ -1,0 +1,53 @@
+================================================================================
+BUSINESS INSIGHTS - WoW Player Churn Drivers
+Derived from SHAP analysis of the tuned best model (Logistic Regression, ROC-AUC 0.833)
+================================================================================
+
+1. observations  (LOW values push toward CHURN)
+2. obs_x_level  (HIGH values push toward CHURN)
+3. activity_days  (LOW values push toward CHURN)
+4. unique_zones  (LOW values push toward CHURN)
+5. obs_per_session  (HIGH values push toward CHURN)
+
+--------------------------------------------------------------------------------
+RETENTION RECOMMENDATIONS
+--------------------------------------------------------------------------------
+
+
+* activity_days / observation density
+  Players who were active for short spans (< 30 days) or whose observations were thin in the observation window are at high risk.
+  Trigger automated re-engagement messaging (in-game mail, email) when a character has been inactive for 14 days.
+  The earlier the touchpoint, the higher the recovery rate..
+
+* has_guild / no_guild  (social anchor)
+  Solo players churn at more than double the rate of guild members (67.6% vs 30.9% in EDA).
+  Implement a guild-finder nudge at day 7 for new characters that have not joined a guild.
+  Auto-suggest active recruiting guilds matching the player's level range and class..
+
+* zone_per_day / zones_per_obs  (exploration)
+  Players who confine themselves to 1-3 zones disengage faster.
+  A daily quest pointing the player to a new zone (with a small in-game reward) directly targets this driver and reinforces exploration as a habit..
+
+* level_per_day / max_level  (progression)
+  Stalled levellers (level_gain < 2 over a 30+ day span) need progression aids.
+  Identify the level band where they stalled and surface relevant content - quests, gear, or rest XP - instead of letting them grind unaided..
+
+* obs_per_session  (session depth)
+  Players who log in briefly but never settle into long sessions are at risk.
+  A 'come back to where you left off' resume feature and short-form content (15-30 minute objectives) can convert shallow logins into deeper engagement..
+
+--------------------------------------------------------------------------------
+HIGH-VALUE TAKEAWAYS FOR THE BUSINESS
+--------------------------------------------------------------------------------
+- A model with ROC-AUC 0.833 ranks at-risk players reliably enough
+  to drive a targeted retention campaign rather than blanket
+  outreach. Concentrating the campaign budget on the top 20%
+  highest-risk players is the highest-ROI use of this model.
+- The strongest churn drivers are not random - they cluster
+  around three behavioural themes: engagement depth, social
+  anchoring, and exploration. Retention strategy should be
+  built around these three themes, not around demographics.
+- The model catches 68% of actual churners (recall) at 64%
+  precision - acceptable for low-cost retention interventions
+  (e.g. email, in-game mail). For high-cost interventions a
+  higher probability threshold should be set to raise precision.
