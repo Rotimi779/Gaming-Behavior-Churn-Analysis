@@ -46,10 +46,10 @@ warnings.filterwarnings("ignore")
 # Paths & config
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
+PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed", "phase2")
 MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
-SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "results", "phase3")
+SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots", "phase3")
 
 for d in (MODELS_DIR, RESULTS_DIR, SCREENSHOTS_DIR):
     os.makedirs(d, exist_ok=True)
@@ -385,10 +385,10 @@ def main():
     print("  models/best_model.pkl")
     print("  models/scaler.pkl")
     print("  models/best_model_info.txt")
-    print("  results/model_comparison_results.csv")
-    print("  screenshots/12_roc_curves.png")
-    print("  screenshots/13_model_comparison.png")
-    print("  screenshots/14_confusion_matrix.png")
+    print("  results/phase3/model_comparison_results.csv")
+    print("  screenshots/phase3/12_roc_curves.png")
+    print("  screenshots/phase3/13_model_comparison.png")
+    print("  screenshots/phase3/14_confusion_matrix.png")
 
 
 if __name__ == "__main__":

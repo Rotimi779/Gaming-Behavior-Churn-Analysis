@@ -35,11 +35,11 @@ warnings.filterwarnings("ignore")
 # Paths
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
+PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed", "phase2")
 MODELS_DIR = os.path.join(PROJECT_ROOT, "models")
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "results", "phase4")
 SHAP_DIR = os.path.join(RESULTS_DIR, "shap_analysis")
-SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots")
+SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots", "phase4")
 
 for d in (RESULTS_DIR, SHAP_DIR, SCREENSHOTS_DIR):
     os.makedirs(d, exist_ok=True)
@@ -94,7 +94,7 @@ def compute_shap(model, X_train_scaled, X_test_scaled):
     # Save raw SHAP values
     shap_df = pd.DataFrame(shap_values.values, columns=X_test_scaled.columns)
     shap_df.to_csv(os.path.join(SHAP_DIR, "shap_values.csv"), index=False)
-    print(f"  Saved: results/shap_analysis/shap_values.csv")
+    print(f"  Saved: results/phase4/shap_analysis/shap_values.csv")
 
     return explainer, shap_values
 
@@ -358,12 +358,12 @@ def main():
 
     section("PHASE 4 COMPLETE")
     print("Outputs:")
-    print("  results/shap_analysis/shap_values.csv")
-    print("  results/shap_analysis/shap_global_importance.csv")
-    print("  results/business_insights.txt")
-    print("  screenshots/15_shap_bar.png")
-    print("  screenshots/16_shap_beeswarm.png")
-    print("  screenshots/17_shap_waterfall.png")
+    print("  results/phase4/shap_analysis/shap_values.csv")
+    print("  results/phase4/shap_analysis/shap_global_importance.csv")
+    print("  results/phase4/business_insights.txt")
+    print("  screenshots/phase4/15_shap_bar.png")
+    print("  screenshots/phase4/16_shap_beeswarm.png")
+    print("  screenshots/phase4/17_shap_waterfall.png")
 
 
 if __name__ == "__main__":

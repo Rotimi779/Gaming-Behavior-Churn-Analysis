@@ -45,9 +45,9 @@ from sklearn.preprocessing import LabelEncoder
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_DATA = os.path.join(PROJECT_ROOT, "data", "raw",
                         "wowah_data_filtered_10000.csv")
-PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
-SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots")
+PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed", "phase2")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "results", "phase2")
+SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots", "phase2")
 
 for d in (PROCESSED_DIR, RESULTS_DIR, SCREENSHOTS_DIR):
     os.makedirs(d, exist_ok=True)
@@ -439,13 +439,13 @@ def main():
     print(f"Final feature count: {len(final_features)}")
     print(f"Baseline -> Final ROC-AUC: {baseline_score:.4f} -> {final_score:.4f}")
     print("\nOutputs:")
-    print("  data/processed/wow_user_features.csv")
-    print("  data/processed/X_train.csv, X_test.csv, y_train.csv, y_test.csv")
-    print("  results/feature_engineering_results.csv")
-    print("  results/final_feature_importance.csv")
-    print("  results/final_feature_list.txt")
-    print("  screenshots/10_feature_impact_ranking.png")
-    print("  screenshots/11_final_feature_importance.png")
+    print("  data/processed/phase2/wow_user_features.csv")
+    print("  data/processed/phase2/X_train.csv, X_test.csv, y_train.csv, y_test.csv")
+    print("  results/phase2/feature_engineering_results.csv")
+    print("  results/phase2/final_feature_importance.csv")
+    print("  results/phase2/final_feature_list.txt")
+    print("  screenshots/phase2/10_feature_impact_ranking.png")
+    print("  screenshots/phase2/11_final_feature_importance.png")
 
 
 if __name__ == "__main__":

@@ -39,9 +39,9 @@ import seaborn as sns
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_DATA = os.path.join(PROJECT_ROOT, "data", "raw",
                         "wowah_data_filtered_10000.csv")
-PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed")
-RESULTS_DIR = os.path.join(PROJECT_ROOT, "results")
-SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots")
+PROCESSED_DIR = os.path.join(PROJECT_ROOT, "data", "processed", "phase1")
+RESULTS_DIR = os.path.join(PROJECT_ROOT, "results", "phase1")
+SCREENSHOTS_DIR = os.path.join(PROJECT_ROOT, "screenshots", "phase1")
 
 for d in (PROCESSED_DIR, RESULTS_DIR, SCREENSHOTS_DIR):
     os.makedirs(d, exist_ok=True)
@@ -548,17 +548,17 @@ def main():
 
     section("PHASE 1 COMPLETE")
     print("Outputs:")
-    print("  data/processed/wow_eda_character_summary.csv")
-    print("  results/eda_summary.txt")
-    print("  screenshots/01_churn_distribution.png")
-    print("  screenshots/02_observations_per_character.png")
-    print("  screenshots/03_activity_span.png")
-    print("  screenshots/04_level_distribution.png")
-    print("  screenshots/05_zone_diversity.png")
-    print("  screenshots/06_guild_analysis.png")
-    print("  screenshots/07_class_race_churn.png")
-    print("  screenshots/08_temporal_churn.png")
-    print("  screenshots/09_correlation_summary.png")
+    print("  data/processed/phase1/wow_eda_character_summary.csv")
+    print("  results/phase1/eda_summary.txt")
+    print("  screenshots/phase1/01_churn_distribution.png")
+    print("  screenshots/phase1/02_observations_per_character.png")
+    print("  screenshots/phase1/03_activity_span.png")
+    print("  screenshots/phase1/04_level_distribution.png")
+    print("  screenshots/phase1/05_zone_diversity.png")
+    print("  screenshots/phase1/06_guild_analysis.png")
+    print("  screenshots/phase1/07_class_race_churn.png")
+    print("  screenshots/phase1/08_temporal_churn.png")
+    print("  screenshots/phase1/09_correlation_summary.png")
 
 
 if __name__ == "__main__":
